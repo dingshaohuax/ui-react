@@ -9,38 +9,148 @@ const homeHref = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>在线演示</title>
+		<title>组件演示 | ui-react</title>
 
 		<style>
 			body {
 				min-height: 100vh;
 				margin: 0;
+				background: radial-gradient(ellipse at top, #e9f2ff, transparent 34rem) #f5f7fb;
+				color: #152541;
+				font: 1rem/1.5 system-ui, sans-serif;
+			}
+
+			.page-width {
+				width: min(calc(100% - 2rem), 60rem);
+				margin-inline: auto;
+			}
+
+			.topbar {
+				border-bottom: 1px solid #dfe7f1;
+				background: rgb(255 255 255 / 90%);
+			}
+
+			.topbar-inner {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1rem;
+				min-height: 3.75rem;
+			}
+
+			.project-name {
+				color: #1559bf;
+				font-weight: 700;
 			}
 
 			.back-link {
-				position: fixed;
-				inset-inline-end: 1rem;
-				inset-block-end: 1rem;
-				padding: 0.5rem 0.75rem;
-				border: 1px solid #d0d5dd;
-				border-radius: 0.5rem;
-				background: #fff;
-				color: #344054;
-				font:
-					0.875rem system-ui,
-					sans-serif;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4rem;
+				padding: 0.35rem 0.65rem;
+				border-radius: 0.375rem;
+				color: #344761;
+				font-size: 0.875rem;
 				text-decoration: none;
 			}
 
 			.back-link:hover {
-				text-decoration: underline;
+				background: #edf4ff;
+				color: #1559bf;
+			}
+
+			.back-link:focus-visible {
+				outline: 2px solid #1765d8;
+				outline-offset: 2px;
+			}
+
+			.playground {
+				padding-block: clamp(2rem, 7vw, 5rem) 3rem;
+			}
+
+			h1 {
+				margin: 0 0 clamp(1.25rem, 4vw, 2rem);
+				font-size: clamp(2rem, 5vw, 3rem);
+				line-height: 1.2;
+			}
+
+			.playground :global(.demo-grid) {
+				display: grid;
+				gap: 1rem;
+			}
+
+			.playground :global(.demo-card) {
+				min-width: 0;
+				padding: clamp(1rem, 3vw, 1.5rem);
+				border: 1px solid #dfe7f1;
+				border-radius: 1rem;
+				background: #fff;
+				box-shadow: 0 6px 20px rgb(21 37 65 / 5%);
+			}
+
+			.playground :global(.demo-card-heading) {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				gap: 0.75rem;
+				margin-bottom: 1rem;
+			}
+
+			.playground :global(.demo-card-heading h2) {
+				margin: 0;
+				font-size: 1.125rem;
+			}
+
+			.playground :global(.demo-card-heading code) {
+				color: #5a6d87;
+				font-size: 0.8125rem;
+			}
+
+			.playground :global(.demo-preview) {
+				box-sizing: border-box;
+				display: grid;
+				align-items: center;
+				min-height: 8rem;
+				padding: 1rem;
+				border: 1px solid #e8eef6;
+				border-radius: 0.625rem;
+				background: #f8fafd;
+			}
+
+			.playground :global(.demo-buttons) {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.625rem;
+			}
+
+			.playground :global(.demo-field) {
+				display: grid;
+				gap: 0.4rem;
+				width: min(100%, 17rem);
+				font-size: 0.875rem;
+				font-weight: 500;
+			}
+
+			@media (min-width: 45rem) {
+				.playground :global(.demo-grid) {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
 			}
 		</style>
 	</head>
 	<body>
-		<Demo client:load />
-		<a class="back-link" href={homeHref}>
-			返回文档
-		</a>
+		<header class="topbar">
+			<div class="page-width topbar-inner">
+				<span class="project-name">ui-react</span>
+				<a class="back-link" href={homeHref}>
+					<span aria-hidden="true">←</span>
+					返回文档
+				</a>
+			</div>
+		</header>
+		<main class="page-width playground">
+			<h1>组件演示</h1>
+			<Demo client:load />
+		</main>
 	</body>
 </html>
