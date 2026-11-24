@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm build && pnpm --parallel -F @dsh/ui-react -F doc dev",
-    "build": "pnpm -F @dsh/ui-react build"
+    "dev": "pnpm build && pnpm --parallel -F @dingshaohuax/ui-react -F doc dev",
+    "build": "pnpm -F @dingshaohuax/ui-react build"
     
   },
   "keywords": [],

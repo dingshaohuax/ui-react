@@ -20,6 +20,6 @@ Pages 站点首页是文档，首页的「在线演示」会打开同一站点�
 
 ## 发布 npm 包
 
-如果 npm 上还没有 `@dsh/ui-react`，先由有 `@dsh` 发布权限的维护者按选定的可见性完成首发。然后在 npm 包设置的 **Trusted publishing** 中添加 GitHub Actions，组织填 `ding-private`，仓库名填 `tpl-fe-comp`，工作流文件名填 `publish-npm.yml`，允许直接执行 `npm publish`。
+如果 npm 上还没有 `@dingshaohuax/ui-react`，先由有 `@dsh` 发布权限的维护者按选定的可见性完成首发。然后在 npm 包设置的 **Trusted publishing** 中添加 GitHub Actions，组织填 `ding-private`，仓库名填 `tpl-fe-comp`，工作流文件名填 `publish-npm.yml`，允许直接执行 `npm publish`。
 
 更新 `packages/core/package.json` 到尚未发布的版本并提交，再将匹配的 `vX.Y.Z` 标签推送到 GitHub。例如版本为 `0.1.0` 时推送 `v0.1.0`。工作流会校验版本、构建组件库并发布到 npm。

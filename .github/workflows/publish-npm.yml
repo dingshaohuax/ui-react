@@ -6,7 +6,7 @@ on:
 
 jobs:
   publish:
-    name: 发布 @dsh/ui-react
+    name: 发布 @dingshaohuax/ui-react
     if: github.event.created
     runs-on: ubuntu-latest
     permissions:
@@ -35,8 +35,8 @@ jobs:
           const tag = process.env.RELEASE_TAG;
           const releaseTag = /^v(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)$/;
 
-          if (name !== '@dsh/ui-react') {
-            console.error(`组件包名称应为 @dsh/ui-react，当前为 ${name}`);
+          if (name !== '@dingshaohuax/ui-react') {
+            console.error(`组件包名称应为 @dingshaohuax/ui-react，当前为 ${name}`);
             process.exit(1);
           }
 

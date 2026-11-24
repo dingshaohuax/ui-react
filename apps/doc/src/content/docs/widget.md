@@ -85,7 +85,7 @@ pnpm build
 Playground 已通过 workspace 依赖接入组件库。在演示页面从包入口导入组件：
 
 ```tsx
-import { MyBtn } from '@dsh/ui-react'
+import { MyBtn } from '@dingshaohuax/ui-react'
 
 <MyBtn type="primary" />
 ```

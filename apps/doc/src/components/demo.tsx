@@ -1,4 +1,4 @@
-import { MyBtn } from '@dsh/ui-react'
+import { MyBtn } from '@dingshaohuax/ui-react'
 
 export default function Demo(){
     return <div>
