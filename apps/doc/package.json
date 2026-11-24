@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "@astrojs/react": "^7.1.9",
-    "@astrojs/starlight": "^0.42.8",
+    "@astrojs/starlight": "^0.43.1",
     "@dingshaohuax/ui-react": "workspace:*",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "astro": "^7.2.10",
+    "astro": "^7.4.13",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "sharp": "^0.35.3",
-    "starlight-theme-rapide": "^0.6.0"
+    "sharp": "^0.35.5",
+    "starlight-theme-rapide": "^0.7.0"
   }
 }
