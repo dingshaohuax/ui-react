@@ -1,0 +1,46 @@
+---
+import Demo from "../components/demo";
+
+const homeHref = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>在线演示</title>
+
+		<style>
+			body {
+				min-height: 100vh;
+				margin: 0;
+			}
+
+			.back-link {
+				position: fixed;
+				inset-inline-end: 1rem;
+				inset-block-end: 1rem;
+				padding: 0.5rem 0.75rem;
+				border: 1px solid #d0d5dd;
+				border-radius: 0.5rem;
+				background: #fff;
+				color: #344054;
+				font:
+					0.875rem system-ui,
+					sans-serif;
+				text-decoration: none;
+			}
+
+			.back-link:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<Demo client:load />
+		<a class="back-link" href={homeHref}>
+			返回文档
+		</a>
+	</body>
+</html>

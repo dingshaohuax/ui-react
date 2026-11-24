@@ -1,0 +1,39 @@
+{
+  "name": "@dsh/ui-react",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "一个简单的组件库（使用tsdown构建）",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dingshaohuax/ui-react.git",
+    "directory": "packages/core"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch --no-clean"
+  },
+  "devDependencies": {
+    "@tsdown/css": "^0.23.4",
+    "@types/react": "^19.3.0",
+    "tsdown": "^0.23.1"
+  },
+  "peerDependencies": {
+    "react": "^19.3.1"
+  },
+  "tsdown": {
+    "dts": {
+      "generator": "oxc"
+    },
+    "platform": "neutral",
+    "css": {
+      "inject": true
+    }
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  }
+}
