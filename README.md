@@ -1,4 +1,4 @@
-# tpl-fe-comp
+# ui-react
 前端组件模板仓库，包含组件库和 Astro/Starlight 站点。站点提供文档和在线演示。
 
 ## 本地开发
