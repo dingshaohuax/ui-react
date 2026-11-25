@@ -2,7 +2,7 @@
 
 React 组件库模板，包含组件构建、文档、在线演示和发布配置。
 
-- [项目基建](apps/doc/src/content/docs/foundation.md)｜[组件使用](apps/doc/src/content/docs/getting-started.md)｜[发布与部署](apps/doc/src/content/docs/foundation/delivery.md)
+具体请看[文档手册](https://dingshaohuax.github.io/ui-react/)。
 
 ## 本地开发
 
