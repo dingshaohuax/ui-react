@@ -4,18 +4,10 @@ import starlight from '@astrojs/starlight';
 import starlightThemeRapide from 'starlight-theme-rapide';
 import react from '@astrojs/react';
 
-const base = (process.env.PAGES_BASE_PATH || '/').replace(/\/$/, '');
-
 // https://astro.build/config
 export default defineConfig({
 	site: process.env.PAGES_ORIGIN || undefined,
 	base: process.env.PAGES_BASE_PATH || '/',
-	redirects: {
-		'/overview': `${base}/foundation/`,
-		'/manual': `${base}/foundation/site/`,
-		'/widget': `${base}/foundation/workspace/`,
-		'/maintainers': `${base}/foundation/`,
-	},
 	vite: {
 		optimizeDeps: {
 			// Serve React's CommonJS client entry as ESM during development.
