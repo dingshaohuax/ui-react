@@ -1,3 +1,9 @@
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-has-toc] {
+    scroll-behavior: smooth;
+  }
+}
+
 /* 去掉侧边栏顶层单独链接的加粗和大号样式 */
 nav.sidebar ul > li > a {
   font-weight: normal;
