@@ -4,10 +4,18 @@ import starlight from '@astrojs/starlight';
 import starlightThemeRapide from 'starlight-theme-rapide';
 import react from '@astrojs/react';
 
+const base = (process.env.PAGES_BASE_PATH || '/').replace(/\/$/, '');
+
 // https://astro.build/config
 export default defineConfig({
 	site: process.env.PAGES_ORIGIN || undefined,
 	base: process.env.PAGES_BASE_PATH || '/',
+	redirects: {
+		'/overview': `${base}/foundation/`,
+		'/manual': `${base}/foundation/site/`,
+		'/widget': `${base}/foundation/workspace/`,
+		'/maintainers': `${base}/foundation/`,
+	},
 	vite: {
 		optimizeDeps: {
 			// Serve React's CommonJS client entry as ESM during development.
@@ -17,18 +25,31 @@ export default defineConfig({
 	integrations: [
 		react(),
 		starlight({
-			title: '产品手册',
+			title: 'UI-React',
+			description: '从 pnpm 工作区、组件库构建到文档和发布的 React 组件库工程模板。',
 			defaultLocale: 'zh-CN',
 			locales: {
 				// 根路径直接映射为中文
 				root: {
-				label: '简体中文',
-				lang: 'zh-CN',
+					label: '简体中文',
+					lang: 'zh-CN',
 				},
 			},
-			plugins: [
-				starlightThemeRapide(), // 👈 加上这行主题插件
+			sidebar: [
+				{
+					label: '项目基建',
+					items: ['foundation', 'foundation/workspace', 'foundation/site', 'foundation/delivery'],
+				},
+				{
+					label: '组件使用',
+					items: [
+						'getting-started',
+						'components/button',
+						'components/input',
+					],
+				},
 			],
+			plugins: [starlightThemeRapide()],
 			customCss: ['./src/styles/custom.css'],
 		})
 	],

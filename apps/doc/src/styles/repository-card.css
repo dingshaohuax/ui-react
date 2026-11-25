@@ -1,0 +1,37 @@
+.hero > .hero-html:has(.repository-card) {
+  order: 2;
+  min-width: 0;
+  width: min(100%, 30rem);
+}
+
+.repository-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #2a3e5a;
+  border-radius: 0.875rem;
+  background: #101c2f;
+  color: #edf3ff;
+  box-shadow: 0 1rem 2.5rem rgb(16 28 47 / 15%);
+}
+
+.repository-card-title {
+  padding: 0.65rem 1.125rem;
+  border-bottom: 1px solid #2a3e5a;
+  background: #182942;
+  color: #bfcfe7;
+  font-size: var(--sl-text-xs);
+  font-weight: 600;
+}
+
+.repository-card pre {
+  margin: 0;
+  overflow-x: auto;
+  padding: 1.125rem;
+  font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+  line-height: 1.85;
+}
+
+.repository-card-path {
+  color: #a2c9ff;
+}

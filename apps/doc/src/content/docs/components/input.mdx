@@ -1,0 +1,49 @@
+---
+title: Input 输入框
+description: Input 的默认类型、标签、受控与非受控用法。
+---
+
+import { Input } from '@dingshaohuax/ui-react';
+import ComponentPreview from '../../../components/component-preview.astro';
+
+`Input` 渲染原生 `<input>`，默认 `type="text"`。用 `<label>` 提供字段名称，标签单独放时，用 `htmlFor` 对应输入框的 `id`。
+
+## 基础用法
+
+<ComponentPreview>
+  <label for="example-email">邮箱</label>
+  <Input id="example-email" name="email" type="email" placeholder="name@example.com" required />
+</ComponentPreview>
+
+在表单中，`type="email"` 和 `required` 会启用浏览器自带的邮箱格式和必填校验。
+
+## 受控与非受控
+
+- **非受控**用 `defaultValue` 指定初始值，后续由浏览器管理。
+- **受控**用 `value` 和 `onChange` 维护 React 状态，便于实时预览或联动。
+
+```tsx
+import { useState } from 'react'
+import { Input } from '@dingshaohuax/ui-react'
+
+export function NameFields() {
+  const [name, setName] = useState('')
+
+  return (
+    <>
+      <label>
+        昵称（非受控）
+        <Input defaultValue="小鹿" />
+      </label>
+      <label>
+        昵称（受控）
+        <Input value={name} onChange={(event) => setName(event.currentTarget.value)} />
+      </label>
+      <p>实时预览 {name || '未填写'}</p>
+    </>
+  )
+}
+```
+
+[试试输入框](../../playground/#input-heading)
+

@@ -1,0 +1,42 @@
+---
+title: Button 按钮
+description: Button 的两种样式和表单行为。
+---
+
+import { Button } from '@dingshaohuax/ui-react';
+import ComponentPreview from '../../../components/component-preview.astro';
+
+`Button` 渲染原生 `<button>`。`type` 选样式，默认为 `default`，主要操作可用 `primary`。
+
+## 样式预览
+
+<ComponentPreview>
+  <Button htmlType="button">取消</Button>
+  <Button type="primary" htmlType="button">保存</Button>
+  <Button htmlType="button" disabled>提交</Button>
+</ComponentPreview>
+
+## 在表单中使用
+
+`htmlType` 决定表单行为，`button` 用于普通操作，`submit` 提交，`reset` 重置。省略 `htmlType` 时，表单里的按钮通常会触发提交。
+
+```tsx
+import { Button } from '@dingshaohuax/ui-react'
+
+export function FormActions() {
+  return (
+    <form
+      onSubmit={(event) => {
+        event.preventDefault()
+        alert('已触发表单提交')
+      }}
+    >
+      <Button htmlType="button" onClick={() => alert('预览')}>预览</Button>
+      <Button type="primary" htmlType="submit">保存</Button>
+    </form>
+  )
+}
+```
+
+[查看按钮演示](../../playground/#button-heading)
+

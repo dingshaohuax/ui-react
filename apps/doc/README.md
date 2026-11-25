@@ -1,49 +1,20 @@
-# Starlight Starter Kit: Basics
+# ui-react 文档站
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Astro + Starlight 文档站。工程怎么搭、怎么复制，见[模板概览](src/content/docs/foundation.md)。
 
-```
-pnpm create astro@latest -- --template starlight
-```
+## 本地预览
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+在仓库根目录运行。
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+```bash
+pnpm install
+pnpm build
+pnpm -F doc astro dev --background
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+用 `pnpm -F doc astro dev status` 查地址，`pnpm -F doc astro dev stop` 停止服务。
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## 编辑与构建
 
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- 文档在 `src/content/docs/`，侧栏在 `astro.config.mjs`，演示入口是 `src/pages/playground.astro`。
+- 在根目录先跑 `pnpm build`，再跑 `pnpm -F doc build`。站点产物在 `apps/doc/dist/`。
